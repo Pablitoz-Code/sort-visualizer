@@ -46,7 +46,7 @@ func main() {
 		for j := 0; j < n-i-1; j++ {
 			if bars[j] > bars[j+1] {
 				bars[j], bars[j+1] = bars[j+1], bars[j]
-				images = append(images, makeImage(bars, i*1000+j))
+				images = append(images, makeImage(bars))
 				delays = append(delays, 5)
 			}
 		}
