@@ -1,4 +1,4 @@
-// Create GIF visualization of bubble sort
+// Create GIF visualization of selection sort
 package main
 
 import (
@@ -54,7 +54,7 @@ func main() {
 	images = append(images, makeImage(bars))
 	delays = append(delays, 5)
 	delays[len(delays)-1] = 250
-	f, err := os.Create("insertionsort.gif")
+	f, err := os.Create("selectionsort.gif")
 	if err != nil {
 		fmt.Println(err)
 		return
