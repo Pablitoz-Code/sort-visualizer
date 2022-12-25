@@ -13,10 +13,10 @@ func makeImage(bars []int) *image.Paletted {
 	palette := []color.Color{
 		color.RGBA{0x00, 0x00, 0x00, 0xff}, color.RGBA{0xff, 0xff, 0xff, 0xff},
 	}
-	img := image.NewPaletted(image.Rect(0, 0, 500, 500), palette)
-	for y := 0; y < 500; y++ {
-		for x := 0; x < 500; x++ {
-			if bars[int(x/10)]*10 >= 500-y {
+	img := image.NewPaletted(image.Rect(0, 0, len(bars)*10, len(bars)*10), palette)
+	for y := 0; y < len(bars)*10; y++ {
+		for x := 0; x < len(bars)*10; x++ {
+			if bars[int(x/10)]*10 >= len(bars)*10-y {
 				img.Set(x, y, color.NRGBA{
 					R: uint8(255),
 					G: uint8(255),
@@ -37,7 +37,6 @@ func makeImage(bars []int) *image.Paletted {
 	return img
 }
 func main() {
-	const width, height = 50, 50
 	images := []*image.Paletted{}
 	delays := []int{}
 	bars := []int{8, 3, 10, 41, 37, 27, 30, 23, 40, 34, 45, 13, 42, 14, 21, 22, 24, 16, 33, 36, 7, 35, 1, 50, 2, 43, 49, 20, 31, 39, 6, 5, 15, 17, 11, 18, 25, 12, 32, 44, 46, 48, 47, 38, 19, 28, 9, 29, 26, 4}
