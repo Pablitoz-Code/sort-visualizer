@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-func makeImage(bars []int, counter int) *image.Paletted {
+func makeImage(bars []int) *image.Paletted {
 	palette := []color.Color{
 		color.RGBA{0x00, 0x00, 0x00, 0xff}, color.RGBA{0xff, 0xff, 0xff, 0xff},
 	}
